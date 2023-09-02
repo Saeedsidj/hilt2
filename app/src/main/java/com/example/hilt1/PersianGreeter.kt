@@ -8,9 +8,9 @@ import saman.zamani.persiandate.PersianDateFormat
 class PersianGreeter @Inject constructor(
     val logger: Logger,
     val persianDate:PersianDateFormat
-) {
+):Greet {
 
-    fun greet(s: String) {
+    override fun greet(s: String) {
         val pDate=PersianDate()
         logger.logMethod("  سلام $s  ${persianDate.format(pDate)}")
     }
