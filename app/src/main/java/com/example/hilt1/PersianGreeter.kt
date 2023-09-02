@@ -1,11 +1,17 @@
 package com.example.hilt1
 
+import com.example.hilt1.DI.persianDate
+import saman.zamani.persiandate.PersianDate
 import javax.inject.Inject
+import saman.zamani.persiandate.PersianDateFormat
 
 class PersianGreeter @Inject constructor(
-    val logger: Logger
+    val logger: Logger,
+    val persianDate:PersianDateFormat
 ) {
+
     fun greet(s: String) {
-        logger.logMethod(s)
+        val pDate=PersianDate()
+        logger.logMethod("  سلام $s  ${persianDate.format(pDate)}")
     }
 }

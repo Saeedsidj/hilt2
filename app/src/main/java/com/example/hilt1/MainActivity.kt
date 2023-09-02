@@ -25,6 +25,9 @@ class MainActivity : ComponentActivity() {
     @Inject
     lateinit var persianGreeter: PersianGreeter
 
+    @Inject
+    lateinit var englishGreeter: EnglishGreeter
+
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +43,10 @@ class MainActivity : ComponentActivity() {
                     TextField(value = textState, onValueChange = {
                         textState=it
                     } )
-                    Button(onClick = { persianGreeter.greet(textState) }) {
+                    Button(onClick = {
+                        persianGreeter.greet(textState)
+                        englishGreeter.greet(textState)
+                    }) {
                         Text(text = "S U B M I T")
 
                     }

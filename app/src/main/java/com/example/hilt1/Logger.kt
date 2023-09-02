@@ -5,6 +5,6 @@ import javax.inject.Inject
 
 class Logger @Inject constructor() {
     fun logMethod(string:String){
-        Log.d("Logger", "logMethod: $string ")
+        Log.d("Logger", string)
     }
 }
